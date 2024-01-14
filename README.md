@@ -28,3 +28,17 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+
+Hi!
+
+I've spent nearly 4 hours on this task.
+
+What would I add:
+deleting workers,  
+authentication, 
+option of changing emails or positions or working time, maybe even name,
+validation for input and select component(I would use yup library),
+maybe light and dark theme since personally I like dark theme more,
+admin dashboard.
