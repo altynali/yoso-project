@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import { MyCardType } from "../../shared/type";
+import { MyWorkerType } from "../../shared/type";
 
 export type MyCardProps = {
-  card: MyCardType;
+  card: MyWorkerType;
 };
 
 const MyCard: FC<MyCardProps> = ({ card }) => {

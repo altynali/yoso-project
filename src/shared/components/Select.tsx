@@ -3,14 +3,16 @@ import Form from "react-bootstrap/Form";
 import { FormGroupProps } from "react-bootstrap/esm/FormGroup";
 import { MyOptionType } from "../type";
 import Col from "react-bootstrap/Col";
+import { FormSelectProps } from "react-bootstrap/esm/FormSelect";
 
 export type SelectProps = {
   label: string;
-  defaultSelectLabel: string;
+  defaultSelectLabel?: string;
   sm?: number;
   options: Array<MyOptionType>;
   className?: string;
-} & Pick<FormGroupProps, "as" | "controlId">;
+} & Pick<FormGroupProps, "as" | "controlId"> &
+  FormSelectProps;
 
 const Select: FC<SelectProps> = (props) => {
   const {
@@ -18,21 +20,26 @@ const Select: FC<SelectProps> = (props) => {
     label,
     controlId,
     options,
-    defaultSelectLabel,
+    defaultValue,
     sm = 6,
     className,
+    value,
+    onChange,
+    name,
   } = props;
 
   return (
     <Form.Group className={className} as={as} sm={sm} controlId={controlId}>
       <Form.Label>{label}</Form.Label>
-      <Form.Select>
-        <option disabled value={`default-${controlId}`}>
-          {defaultSelectLabel}
-        </option>
-
+      <Form.Select
+        value={value || defaultValue}
+        onChange={onChange}
+        name={name}
+      >
         {options.map(({ value, label }) => (
-          <option value={value}>{label}</option>
+          <option value={value} key={value}>
+            {label}
+          </option>
         ))}
       </Form.Select>
     </Form.Group>

@@ -1,18 +1,18 @@
 import { FC } from "react";
 import Row from "react-bootstrap/Row";
 import MyCard from "./Card";
-import { MyCardType } from "../../shared/type";
+import { MyWorkerType } from "../../shared/type";
 
 export type CardListProps = {
-  cardsArr: MyCardType[];
+  cardsArr: MyWorkerType[] | undefined;
 };
 
 const CardList: FC<CardListProps> = ({ cardsArr }) => {
   return (
     <Row className="gap-3">
-      {cardsArr.map((card) => (
-        <MyCard key={card.id} card={card} />
-      ))}
+      {cardsArr
+        ? cardsArr.map((card) => <MyCard key={card.id} card={card} />)
+        : "No workers"}
     </Row>
   );
 };

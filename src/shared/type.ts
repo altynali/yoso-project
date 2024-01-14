@@ -3,10 +3,12 @@ export type MyOptionType = {
   label: string;
 };
 
-export type MyCardType = {
-  id: string;
+export type MyWorkerType = {
+  id: number;
   fullName: string;
   email: string;
   jobPosition: string;
   workingTime: string;
 };
+
+export type NewWorkerType = Omit<MyWorkerType, "id">;

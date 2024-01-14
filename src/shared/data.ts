@@ -29,3 +29,6 @@ export const workingTime: MyOptionType[] = [
     label: "part-time",
   },
 ];
+
+export const jobPositionDefaultValue = "frontend";
+export const workingTimeDefaultValue = "full-time";
